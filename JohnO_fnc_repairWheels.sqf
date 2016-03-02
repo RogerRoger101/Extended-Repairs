@@ -44,7 +44,7 @@ _wheelToRepair = (_broken select 0) select 1;
 
 if (_broken isEqualTo []) exitWith
 {
-	["RepairFailedWarning", ["The rotors do not need repair"]] call ExileClient_gui_notification_event_addNotification;
+	["RepairFailedWarning", ["The wheels do not need repair"]] call ExileClient_gui_notification_event_addNotification;
 };
 if (!local _vehicle) then
 {
