@@ -18,7 +18,7 @@ find -
 			class Repair: ExileAbstractAction
 			{
 				title = "Repair";
-				condition = "call ExileClient_object_vehicle_interaction_show";
+				condition = "true";
 				action = "_this call ExileClient_object_vehicle_repair";
 			};
 			
@@ -28,7 +28,7 @@ Relace with
 			class Repair: ExileAbstractAction
 			{
 				title = "Repair Body";
-				condition = "call ExileClient_object_vehicle_interaction_show";
+				condition = "true";
 				action = "_this call JohnO_fnc_vehicleRepairCar";
 			};
 			class RepairWheels: ExileAbstractAction
@@ -43,7 +43,7 @@ Find -
 			class Repair: ExileAbstractAction
 			{
 				title = "Repair";
-				condition = "call ExileClient_object_vehicle_interaction_show";
+				condition = "true";
 				action = "_this call ExileClient_object_vehicle_repair";
 			};
 			
@@ -52,13 +52,13 @@ Replace with -
 			class RepairMajor: ExileAbstractAction
 			{
 				title = "Full Repair";
-				condition = "call ExileClient_object_vehicle_interaction_show";
+				condition = "true";
 				action = "_this call JohnO_fnc_repairchopper";
 			};
 			class RepairMinor: ExileAbstractAction
 			{
 				title = "Minor Repair";
-				condition = "call ExileClient_object_vehicle_interaction_show";
+				condition = "true";
 				action = "_this call JohnO_fnc_repairchopperhalf";
 			};
 Thats it!
