@@ -11,13 +11,17 @@
  
 private["_vehicle","_availableHitpoints","_fixable","_equippedMagazines"];
 _vehicle = _this select 0;
+if (ExilePlayerInSafezone) exitWith
+{
+	["RepairFailedWarning", ["Cannot Repair in SafeZone"]] call ExileClient_gui_notification_even_addNotification;
+};
 /*if (ExileClientPlayerIsInCombat) exitWith
 {
 	["RepairFailedWarning", ["You are in combat!"]] call ExileClient_gui_notification_event_addNotification;
 };*/
 if (vehicle player isEqualTo _vehicle) exitWith 
 {
-	["RepairFailedWarning", ["Are you serious?"]] call ExileClient_gui_notification_event_addNotification;
+	["RepairFailedWarning", ["Repair Failed"]] call ExileClient_gui_notification_event_addNotification;
 };
 _availableHitpoints = (getAllHitPointsDamage _vehicle) select 0;
 {
@@ -30,7 +34,7 @@ forEach _availableHitpoints;
 _repairable = [];
 if (_vehicle isKindOf "car") then
 {	
-	_wheels = ["HitLF2Wheel","HitLFWheel","HitRFWheel","HitRF2Wheel"];
+	_wheels = ["HitLF2Wheel","HitLFWheel","HitRFWheel","HitRF2Wheel","HitRMWheel","HitLMWheel","HitRBWheel","HitLBWheel"];
 	_repairable = _availableHitpoints - _wheels;
 };
 /*if (_vehicle isKindOf "air") then
